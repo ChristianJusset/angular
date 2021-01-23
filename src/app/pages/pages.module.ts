@@ -13,6 +13,8 @@ import { NopagefoundComponent } from '../nopagefound/nopagefound.component';
 
 import { FormsModule } from '@angular/forms';
 import { ComponentsModule } from '../components/components.module';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -23,7 +25,9 @@ import { ComponentsModule } from '../components/components.module';
     ProgressComponent,
     Grafica1Component,
     PagesComponent,
-    NopagefoundComponent
+    NopagefoundComponent,
+    AccountSettingsComponent
+    
   ],
   imports: [
     CommonModule,
@@ -31,14 +35,15 @@ import { ComponentsModule } from '../components/components.module';
     AppRoutingModule,
     FormsModule,
     ComponentsModule,
-    
+    RouterModule
   ],
   exports: [
     DashboardComponent,
     ProgressComponent,
     Grafica1Component,
     PagesComponent,
-    NopagefoundComponent
+    NopagefoundComponent,
+    AccountSettingsComponent
   ]
 })
 export class PagesModule { }
