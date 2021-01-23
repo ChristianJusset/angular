@@ -15,6 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { ComponentsModule } from '../components/components.module';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { RouterModule } from '@angular/router';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 
@@ -26,7 +28,9 @@ import { RouterModule } from '@angular/router';
     Grafica1Component,
     PagesComponent,
     NopagefoundComponent,
-    AccountSettingsComponent
+    AccountSettingsComponent,
+    PromesasComponent,
+    RxjsComponent
     
   ],
   imports: [
