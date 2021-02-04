@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivationEnd, Router } from '@angular/router';
+import { ActivationEnd, Router,ActivatedRoute } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
-import { Subscription } from 'rxjs';
+import { observable, Subscription } from 'rxjs';
 
 
 @Component({
@@ -31,13 +31,15 @@ export class BreadcrumbsComponent implements OnInit,OnDestroy {
     this.tituloSubs$.unsubscribe();
   }
 
-  
   getArgumentosRuta() {
+   
     return this.router.events
-    .pipe(
-      filter( event => event instanceof ActivationEnd ),
-      filter( (event: ActivationEnd) => event.snapshot.firstChild === null  ),
-      map( (event: ActivationEnd) => event.snapshot.data ),
-    );
+      .pipe(
+        filter( (event): event is ActivationEnd => event instanceof ActivationEnd ),
+        filter( (event: ActivationEnd) => event.snapshot.firstChild === null  ),
+        map( (event: ActivationEnd) => event.snapshot.data ),
+      );
   }
+
+
 }
