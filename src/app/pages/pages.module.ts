@@ -11,12 +11,13 @@ import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { NopagefoundComponent } from '../nopagefound/nopagefound.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComponentsModule } from '../components/components.module';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { RouterModule } from '@angular/router';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 
 
@@ -30,7 +31,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     NopagefoundComponent,
     AccountSettingsComponent,
     PromesasComponent,
-    RxjsComponent
+    RxjsComponent,
+    PerfilComponent
     
   ],
   imports: [
@@ -39,7 +41,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     AppRoutingModule,
     FormsModule,
     ComponentsModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
     DashboardComponent,
@@ -47,7 +50,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     Grafica1Component,
     PagesComponent,
     NopagefoundComponent,
-    AccountSettingsComponent
+    AccountSettingsComponent,
+    PerfilComponent
   ]
 })
 export class PagesModule { }

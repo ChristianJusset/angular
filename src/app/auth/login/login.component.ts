@@ -91,7 +91,9 @@ export class LoginComponent implements OnInit {
               .subscribe( resp => {
                 console.log(resp.token);
                 // Navegar al Dashboard
-                this.router.navigateByUrl('/');
+                this.ngZone.run( () => {
+                  this.router.navigateByUrl('/');
+                })
               });
 
         }, (error: any) => {
