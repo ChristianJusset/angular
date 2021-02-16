@@ -22,7 +22,7 @@ export class ModalImagenService {
 
   abrirModal( 
     tipo: 'usuarios'|'medicos'|'hospitales',
-    id: string,
+    id: string='',
     img: string = 'no-img'
   ) {
   this._ocultarModal = false;

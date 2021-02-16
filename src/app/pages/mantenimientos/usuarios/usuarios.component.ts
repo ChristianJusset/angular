@@ -1,5 +1,5 @@
 import { rendererTypeName } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { Usuario } from 'src/app/models/usuario.model';
@@ -29,7 +29,7 @@ export class UsuariosComponent implements OnInit,OnDestroy {
   ngOnInit(): void {
     this.cargarUsuarios();
     this.imgSubs = this.modalImagenService.nuevaImagen
-    .pipe(delay(150)) 
+    .pipe(delay(200)) 
     .subscribe( img => this.cargarUsuarios() );
   }
 
@@ -43,11 +43,11 @@ export class UsuariosComponent implements OnInit,OnDestroy {
     }
   
     this.busquedasService.buscar( 'usuarios', termino )
-        .subscribe( resp => {
+    .subscribe( (resp: Usuario[]) => {
 
-          this.usuarios = resp;
+      this.usuarios = resp;
 
-        });
+    });
 
         return this.usuarios;
   }
